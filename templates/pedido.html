@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacer pedido</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🧾 Tu pedido</h1>
+
+    <form action="/enviar" method="POST">
+
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="text" name="telefono" placeholder="Tu teléfono" required>
+        <input type="text" name="horario" placeholder="Horario de retiro" required>
+
+        <h3>Menú</h3>
+
+        🍗 Pollo al espiedo ($18000)<br>
+        <input type="number" name="pollo" value="0" min="0"><br><br>
+
+        🥩 Sándwich de milanesa ($12000)<br>
+        <input type="number" name="milanesa" value="0" min="0"><br><br>
+
+        🍔 Hamburguesa ($2500)<br>
+        <input type="number" name="hamburguesa" value="0" min="0"><br><br>
+
+        🍔 Hamburguesa especial ($3000)<br>
+        <input type="number" name="hamburguesa_especial" value="0" min="0"><br><br>
+
+        🥟 Empanadas de carne ($12000)<br>
+        <input type="number" name="empanadas_carne" value="0" min="0"><br><br>
+
+        🥟 Empanadas de pollo ($10000)<br>
+        <input type="number" name="empanadas_pollo" value="0" min="0"><br><br>
+
+        <button type="submit">Enviar pedido</button>
+    </form>
+</div>
+
+</body>
+</html>
+
