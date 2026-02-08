@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 
 app = Flask(__name__)
 
@@ -64,7 +65,7 @@ Empanadas pollo: {empanadas_pollo}
 
     mensaje = mensaje.replace(" ", "%20").replace("\n", "%0A")
 
-    numero = "5493624134557"  # formato correcto Argentina
+    numero = "5493624134557"  # Argentina
 
     return f"""
     <script>
@@ -72,6 +73,10 @@ Empanadas pollo: {empanadas_pollo}
     </script>
     """
 
-app.run(debug=True)
+# 👇 ESTA PARTE ES LA CLAVE PARA RENDER
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 
 
