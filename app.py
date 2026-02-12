@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request 
 import os
 
 app = Flask(__name__)
@@ -38,6 +38,9 @@ def enviar():
     hamburguesa_especial = int(request.form.get("hamburguesa_especial", 0))
     promo_5_hamburguesas = int(request.form.get("promo_5_hamburguesas", 0))  # cantidad de promos
 
+    # NUEVO: Pollo al Espiedo
+    pollo_espiedo = int(request.form.get("pollo_espiedo", 0))
+
     # PRECIOS
     precio_sandwich_especial = 13000
     precio_sandwich_comun = 10000
@@ -58,6 +61,9 @@ def enviar():
     precio_hamburguesa_especial = 3000
     precio_promo_5_hamburguesas = 12000
 
+    # POLLO AL ESPIEDO
+    precio_pollo_espiedo = 18000
+
     # TOTAL
     total = (
         sandwich_especial * precio_sandwich_especial +
@@ -72,7 +78,8 @@ def enviar():
         pizza_especial * precio_pizza_especial +
         hamburguesa_comun * precio_hamburguesa_comun +
         hamburguesa_especial * precio_hamburguesa_especial +
-        promo_5_hamburguesas * precio_promo_5_hamburguesas
+        promo_5_hamburguesas * precio_promo_5_hamburguesas +
+        pollo_espiedo * precio_pollo_espiedo
     )
 
     # MENSAJE WHATSAPP
@@ -96,6 +103,8 @@ def enviar():
 🍔 Hamburguesa Común: {hamburguesa_comun}
 🍔 Hamburguesa Especial: {hamburguesa_especial}
 🍔 Promo 5 Hamburguesas + Papas: {promo_5_hamburguesas}
+
+🍗 Pollo al Espiedo: {pollo_espiedo}
 
 💰 *TOTAL: ${total}*
 

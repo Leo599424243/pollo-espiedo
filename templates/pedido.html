@@ -2,25 +2,74 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pedido - Rotisería Killo</title>
+    <title>Rotisería Killo</title>
+
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; margin:0; padding:0; }
-        h1 { background-color: #d62828; color: white; padding: 20px; margin:0; }
-        form { background-color: white; width: 70%; margin: 30px auto; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); }
-        h2 { color: #d62828; margin-top: 30px; margin-bottom: 15px; }
-        label { display: block; margin: 8px 0 4px 0; font-weight: bold; }
-        input[type="number"], input[type="text"] { width: 80%; padding: 10px; font-size: 16px; margin-bottom: 15px; border-radius: 5px; border: 1px solid gray; text-align: center; }
-        button { background-color: #2a9d8f; color: white; font-size: 20px; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; }
-        button:hover { background-color: #21867a; }
-        .seccion { margin-bottom: 30px; }
-        .subinput { display: block; margin: 5px auto 15px auto; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #d62828;
+            color: white;
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            width: 60%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            color: #d62828;
+            margin-top: 30px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        button {
+            background-color: #2a9d8f;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #21867a;
+        }
+
+        .seccion {
+            margin-bottom: 30px;
+        }
     </style>
 </head>
+
 <body>
+
     <h1>🍽 ROTISERÍA KILLO</h1>
 
     <form action="/enviar" method="POST">
 
+        <!-- Datos del Cliente -->
         <div class="seccion">
             <h2>👤 Datos del Cliente</h2>
             <input type="text" name="nombre" placeholder="Nombre" required>
@@ -28,66 +77,72 @@
             <input type="text" name="horario" placeholder="Horario de retiro" required>
         </div>
 
+        <!-- Sándwiches -->
         <div class="seccion">
             <h2>🥪 Sándwiches de Milanesa</h2>
-            <label>Especial ($13.000)</label>
-            <input class="subinput" type="number" name="sandwich_especial" value="0" min="0">
-
-            <label>Común ($10.000)</label>
-            <input class="subinput" type="number" name="sandwich_comun" value="0" min="0">
+            Especial ($13.000)
+            <input type="number" name="sandwich_especial" value="0" min="0">
+            Común ($10.000)
+            <input type="number" name="sandwich_comun" value="0" min="0">
         </div>
 
+        <!-- Empanadas -->
         <div class="seccion">
-    <h2>🥟 Empanadas (por Docena)</h2>
+            <h2>🥟 Empanadas (por docena)</h2>
+            Carne ($12.000)
+            <input type="number" name="docena_carne" value="0" min="0">
+            Jamón y Queso ($14.000)
+            <input type="number" name="docena_jamon_queso" value="0" min="0">
+            Pollo ($10.000)
+            <input type="number" name="docena_pollo" value="0" min="0">
+        </div>
 
-    <label>Carne ($12.000 la docena)</label>
-    <input class="subinput" type="number" name="docena_carne" value="0" min="0">
-
-    <label>Jamón y Queso ($14.000 la docena)</label>
-    <input class="subinput" type="number" name="docena_jamon_queso" value="0" min="0">
-
-    <label>Pollo ($10.000 la docena)</label>
-    <input class="subinput" type="number" name="docena_pollo" value="0" min="0">
-</div>
-
+        <!-- Milanesas -->
         <div class="seccion">
             <h2>🍖 Milanesas</h2>
-            <label>Napolitana ($15.000) - con papas o ensalada mixta o lechuga y tomate o ensalada rusa</label>
-            <input class="subinput" type="number" name="milanesa_napolitana" value="0" min="0">
-
-            <label>Marinera ($15.000) - con papas fritas, ensalada rusa, puré o ensalada mixta</label>
-            <input class="subinput" type="number" name="milanesa_marinera" value="0" min="0">
+            Napolitana ($15.000)
+            <input type="number" name="milanesa_napolitana" value="0" min="0">
+            Marinera ($15.000)
+            <input type="number" name="milanesa_marinera" value="0" min="0">
         </div>
 
+        <!-- Costeleta -->
         <div class="seccion">
             <h2>🥩 Costeleta Completa</h2>
-            <label>Incluye 2 costeletas + papas fritas ($15.000)</label>
-            <input class="subinput" type="number" name="costeleta_completa" value="0" min="0">
+            ($15.000, incluye 2 costeletas y papas fritas)
+            <input type="number" name="costeleta_completa" value="0" min="0">
         </div>
 
+        <!-- Pizzas -->
         <div class="seccion">
             <h2>🍕 Pizzas</h2>
-            <label>Muzzarella ($10.000)</label>
-            <input class="subinput" type="number" name="pizza_muzzarella" value="0" min="0">
-
-            <label>Especial ($12.000)</label>
-            <input class="subinput" type="number" name="pizza_especial" value="0" min="0">
+            Muzzarella ($10.000)
+            <input type="number" name="pizza_muzzarella" value="0" min="0">
+            Especial ($12.000)
+            <input type="number" name="pizza_especial" value="0" min="0">
         </div>
+
+        <!-- Hamburguesas -->
         <div class="seccion">
-    <h2>🍔 Hamburguesas</h2>
+            <h2>🍔 Hamburguesas</h2>
+            Común ($2.500)
+            <input type="number" name="hamburguesa_comun" value="0" min="0">
+            Especial ($3.000)
+            <input type="number" name="hamburguesa_especial" value="0" min="0">
+            Promo 5 Hamburguesas + Papas ($12.000)
+            <input type="number" name="promo_5_hamburguesas" value="0" min="0">
+        </div>
 
-    <label>Común ($2.500 c/u)</label>
-    <input class="subinput" type="number" name="hamburguesa_comun" value="0" min="0">
-
-    <label>Especial ($3.000 c/u)</label>
-    <input class="subinput" type="number" name="hamburguesa_especial" value="0" min="0">
-
-    <label>Promo: 5 Hamburguesas + Papas ($12.000)</label>
-    <input class="subinput" type="number" name="promo_5_hamburguesas" value="0" min="0">
-</div>
-
+        <!-- Pollo al Espiedo -->
+        <div class="seccion">
+            <h2>🍗 Pollo al Espiedo</h2>
+            Precio: $18.000
+            <input type="number" name="pollo_espiedo" value="0" min="0">
+        </div>
 
         <button type="submit">📲 Enviar Pedido</button>
+
     </form>
+
 </body>
 </html>
