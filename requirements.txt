@@ -1,1 +1,3 @@
-flask
+flasFlask==2.3.4
+gunicorn==21.2.0
+
